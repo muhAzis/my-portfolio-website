@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;500;700;900&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css');
+
+:root {
+  --grey1: #e9ecef;
+  --grey2: #363543;
+  --grey3: #2c2c36;
+  --green1: #ecf39e;
+  --green2: #4f772d;
+  --green3: #132a13;
+}
+
+@keyframes floater {
+  0% {
+    border-radius: 62% 38% 52% 48% / 44% 53% 47% 56%;
+  }
+  25% {
+    border-radius: 28% 72% 32% 68% / 75% 39% 61% 25%;
+  }
+  75% {
+    border-radius: 68% 32% 14% 86% / 45% 58% 42% 55%;
+  }
+  100% {
+    border-radius: 82% 18% 85% 15% / 27% 41% 59% 73%;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  color: white;
+  background-color: var(--grey2);
+}
+
+.container {
+  width: 100vw;
+}
+
+/*---------------------------- NAVIGATION BAR ----------------------------*/
+
+nav {
+  display: flex;
+  padding: 20px 40px;
+  color: white;
+  transition: all 1s;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h3 {
+  font-weight: 900;
+}
+
+ul.menu-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+ul.menu-list li a {
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+/*---------------------------- HERO SECTION ----------------------------*/
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding: 0 60px;
+}
+
+.hero .hero-texts {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .hero-texts #greet1 {
+  /* font-size: 24px; */
+  /* font-size: 4em; */
+  font-size: 3.3vw;
+  font-weight: 300;
+}
+
+.hero .hero-texts #greet2 {
+  /* font-size: 32px; */
+  /* font-size: 5em; */
+  font-size: 4.2vw;
+  font-weight: 900;
+}
+
+.hero .hero-texts .hero-col {
+  flex: 1;
+}
+
+.hero .hero-texts .hero-col1 .line {
+  width: 200px;
+  height: 5px;
+  margin-block: 20px;
+  background-color: var(--green1);
+  border-radius: 3px;
+}
+
+.hero .hero-texts .hero-col2 {
+  padding-left: 20px;
+}
+
+.hero .hero-texts .hero-col2 #tagline1 {
+  color: var(--green1);
+  font-weight: 300;
+}
+
+.hero .hero-texts .hero-col2 #tagline2 {
+  margin-block: 5px 10px;
+}
+
+.hero .hero-texts .hero-col2 #tagline3 {
+  color: var(--green1);
+}
+
+.hero .hero-texts .hero-image {
+  width: 30vw;
+  height: 30vw;
+  position: relative;
+}
+
+.hero .hero-texts .hero-image .floater {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: var(--grey3);
+  border-radius: 62% 38% 52% 48% / 44% 53% 47% 56%;
+  animation: floater 15s linear infinite alternate;
+}
+
+.hero .hero-texts .hero-image img {
+  height: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*---------------------------- MAIN SECTION ----------------------------*/
+
+.main-content {
+  width: 100vw;
+  height: 1000px;
+  background-color: var(--grey3);
+}
+
+/*-----------------------------------------------------------------------------*/
+/*---------------------------- RESPONSIVE SETTINGS ----------------------------*/
+/*-----------------------------------------------------------------------------*/
+/* @media screen and (min-width: 375px) and (max-width: 576px) {
+  .hero {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .hero .hero-texts {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .hero .hero-image {
+    position: relative;
+  }
+
+  .hero .hero-image .floater {
+    width: 300px;
+    height: 300px;
+  }
+
+  .hero .hero-image img {
+    position: relative;
+    top: 5px;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .hero {
+    flex-direction: row;
+  }
+} */
