@@ -38,7 +38,7 @@ module.exports = merge(common, {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      filename: 'index-[hash].html',
+      filename: 'index.html',
     }),
   ],
 });
