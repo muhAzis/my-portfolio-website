@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+// const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const { merge } = require('webpack-merge');
 const path = require('path');
 const common = require('./webpack.config.js');
@@ -42,14 +42,14 @@ module.exports = merge(common, {
       filename: 'index.html',
     }),
   ],
-  optimization: {
-    minimizer: [
-      '...',
-      new ImageMinimizerPlugin({
-        minimizer: {
-          implementation: ImageMinimizerPlugin.squooshMinify,
-        },
-      }),
-    ],
-  },
+  // optimization: {
+  //   minimizer: [
+  //     '...',
+  //     new ImageMinimizerPlugin({
+  //       minimizer: {
+  //         implementation: ImageMinimizerPlugin.squooshMinify,
+  //       },
+  //     }),
+  //   ],
+  // },
 });
