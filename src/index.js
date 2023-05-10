@@ -1,5 +1,6 @@
 // css linking
 import './styles/style.css';
+// import path from 'path';
 import { engineering, digitalCreation, softSkill } from './data/data';
 // -------------------------
 
@@ -75,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const socialMediaIcon = () => {
     socialMedia.style.bottom = `-${socialMedia.clientHeight / 2}px`;
     if (window.innerWidth <= 576) {
+      // socFacebook.setAttribute('src', 'img/facebook-logo-icon.png');
       socFacebook.setAttribute('src', 'img/facebook-logo-icon.png');
       socInstagram.setAttribute('src', 'img/instagram-logo-icon.png');
       socLinkedin.setAttribute('src', 'img/linkedin-logo-icon.png');
