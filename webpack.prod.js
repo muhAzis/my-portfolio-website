@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const { merge } = require('webpack-merge');
 const path = require('path');
 const common = require('./webpack.config.js');
@@ -8,7 +9,7 @@ module.exports = merge(common, {
   output: {
     filename: 'index-[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
-    assetModuleFilename: 'img/[name][ext]',
+    assetModuleFilename: 'img/[hash][ext]',
     clean: true,
   },
   module: {
@@ -41,4 +42,14 @@ module.exports = merge(common, {
       filename: 'index.html',
     }),
   ],
+  optimization: {
+    minimizer: [
+      '...',
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.squooshMinify,
+        },
+      }),
+    ],
+  },
 });

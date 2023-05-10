@@ -1,6 +1,14 @@
 // css linking
 import './styles/style.css';
-// import path from 'path';
+// image dir
+import fbIcon from './img/facebook-logo-icon.png';
+import fbLogo from './img/facebook-logo.png';
+import igIcon from './img/instagram-logo-icon.png';
+import iglogo from './img/instagram-logo.png';
+import liIcon from './img/linkedin-logo-icon.png';
+import liLogo from './img/linkedin-logo.png';
+import ghIcon from './img/github-logo-icon.png';
+import ghLogo from './img/github-logo.png';
 import { engineering, digitalCreation, softSkill } from './data/data';
 // -------------------------
 
@@ -76,16 +84,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const socialMediaIcon = () => {
     socialMedia.style.bottom = `-${socialMedia.clientHeight / 2}px`;
     if (window.innerWidth <= 576) {
-      // socFacebook.setAttribute('src', 'img/facebook-logo-icon.png');
-      socFacebook.setAttribute('src', 'img/facebook-logo-icon.png');
-      socInstagram.setAttribute('src', 'img/instagram-logo-icon.png');
-      socLinkedin.setAttribute('src', 'img/linkedin-logo-icon.png');
-      socGithub.setAttribute('src', 'img/github-logo-icon.png');
+      socFacebook.setAttribute('src', fbIcon);
+      socInstagram.setAttribute('src', igIcon);
+      socLinkedin.setAttribute('src', liIcon);
+      socGithub.setAttribute('src', ghIcon);
     } else {
-      socFacebook.setAttribute('src', 'img/facebook-logo.png');
-      socInstagram.setAttribute('src', 'img/instagram-logo.png');
-      socLinkedin.setAttribute('src', 'img/linkedin-logo.png');
-      socGithub.setAttribute('src', 'img/github-logo.png');
+      socFacebook.setAttribute('src', fbLogo);
+      socInstagram.setAttribute('src', iglogo);
+      socLinkedin.setAttribute('src', liLogo);
+      socGithub.setAttribute('src', ghLogo);
     }
   };
 

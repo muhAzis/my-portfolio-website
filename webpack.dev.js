@@ -16,6 +16,14 @@ module.exports = merge(common, {
       directory: path.join(__dirname, 'src'),
     },
   },
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource',
+      },
+    ],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
