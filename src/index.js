@@ -9,6 +9,7 @@ import liIcon from './img/linkedin-logo-icon.png';
 import liLogo from './img/linkedin-logo.png';
 import ghIcon from './img/github-logo-icon.png';
 import ghLogo from './img/github-logo.png';
+// datas
 import { engineering, digitalCreation, softSkill } from './data/data';
 // -------------------------
 
@@ -84,15 +85,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const socialMediaIcon = () => {
     socialMedia.style.bottom = `-${socialMedia.clientHeight / 2}px`;
     if (window.innerWidth <= 576) {
-      socFacebook.setAttribute('src', fbIcon);
-      socInstagram.setAttribute('src', igIcon);
-      socLinkedin.setAttribute('src', liIcon);
-      socGithub.setAttribute('src', ghIcon);
+      socFacebook.src = fbIcon;
+      socInstagram.src = igIcon;
+      socLinkedin.src = liIcon;
+      socGithub.src = ghIcon;
     } else {
-      socFacebook.setAttribute('src', fbLogo);
-      socInstagram.setAttribute('src', iglogo);
-      socLinkedin.setAttribute('src', liLogo);
-      socGithub.setAttribute('src', ghLogo);
+      socFacebook.src = fbLogo;
+      socInstagram.src = iglogo;
+      socLinkedin.src = liLogo;
+      socGithub.src = ghLogo;
     }
   };
 
