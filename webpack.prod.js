@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { merge } = require('webpack-merge');
 const path = require('path');
 const common = require('./webpack.config.js');
@@ -41,15 +42,17 @@ module.exports = merge(common, {
       template: './src/index.html',
       filename: 'index.html',
     }),
+    new WorkboxWebpackPlugin.InjectManifest({
+      swSrc: path.resolve(__dirname, './src/sw.js'),
+      swDest: './sw.bundle.js',
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, './src/img/pwa/images'),
+          to: path.resolve(__dirname, 'dist/img/images'),
+        },
+      ],
+    }),
   ],
-  // optimization: {
-  //   minimizer: [
-  //     '...',
-  //     new ImageMinimizerPlugin({
-  //       minimizer: {
-  //         implementation: ImageMinimizerPlugin.squooshMinify,
-  //       },
-  //     }),
-  //   ],
-  // },
 });

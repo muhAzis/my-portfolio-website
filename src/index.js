@@ -11,6 +11,8 @@ import ghIcon from './img/github-logo-icon.png';
 import ghLogo from './img/github-logo.png';
 // datas
 import { engineering, digitalCreation, softSkill } from './data/data';
+// service worker
+import swRegister from './utils/sw-register';
 // -------------------------
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -134,4 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.onresize = () => {
     socialMediaIcon();
   };
+
+  window.addEventListener('load', async () => {
+    await swRegister();
+  });
 });
